@@ -120,3 +120,13 @@ Thumbs.db
 !web/core/**/*.gz
 refresh-db-*
 /node_modules
+/vendor/drush/drush/misc/windrush_build/assets/setenv.js
+/vendor/drush/drush/examples/sandwich.txt
+/vendor/composer/installed.json
+/vendor/composer/include_paths.php
+/vendor/composer/autoload_static.php
+/vendor/composer/autoload_real.php
+/vendor/composer/autoload_psr4.php
+/vendor/composer/autoload_namespaces.php
+/vendor/composer/autoload_files.php
+/vendor/composer/autoload_classmap.php
