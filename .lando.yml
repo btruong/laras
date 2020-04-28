@@ -1,0 +1,6 @@
+name: laras
+recipe: pantheon
+config:
+  framework: drupal8
+  site: laras
+  id: a7d0531e-7604-4163-bc97-346b20d59d81
