@@ -1,0 +1,14 @@
+uuid: 8cf7621f-f81f-45e3-ab8c-e8764d021381
+name: laras
+mail: b.truong@yahoo.com
+slogan: 'A Platform for Screening Entries'
+page:
+  403: ''
+  404: ''
+  front: /node
+admin_compact_mode: false
+weight_select_max: 100
+langcode: en
+default_langcode: en
+_core:
+  default_config_hash: yTxtFqBHnEWxQswuWvkjE8mKw2t8oKuCL1q8KnfHuGE
