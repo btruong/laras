@@ -1,0 +1,17 @@
+uuid: addeeeb3-f169-4f2a-97af-9e951f3a0d19
+langcode: en
+status: true
+dependencies: {  }
+id: local
+label: Local
+description: 'Local-only configuration, i.e. development modules (which never reach Pantheon, as Composer development packages are not installed in the build) and related settings.'
+folder: ../config/split/local
+module:
+  twig_vardumper: 0
+  vardumper: 0
+theme: {  }
+blacklist: {  }
+graylist: {  }
+graylist_dependents: true
+graylist_skip_equal: true
+weight: 0
