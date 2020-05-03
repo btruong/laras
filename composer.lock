@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5cc69586b1f2259c8a05a5965be7a016",
+    "content-hash": "31126e37678b779d2bdaff0fbdf07de2",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -2855,7 +2855,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/webform.git",
-                "reference": "ba388f9792a5b914c22a208139777e51df9e662e"
+                "reference": "c4e2d219a3c8235b7d888815f394f1f66c02d2f8"
             },
             "require": {
                 "drupal/core": "^8.7.7 || ^9"
@@ -2891,7 +2891,7 @@
                 },
                 "drupal": {
                     "version": "8.x-5.x-dev",
-                    "datestamp": "1588105592",
+                    "datestamp": "1588374188",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Dev releases are not covered by Drupal security advisories."
@@ -2960,7 +2960,7 @@
                 "docs": "https://www.drupal.org/docs/8/modules/webform",
                 "forum": "https://drupal.stackexchange.com/questions/tagged/webform"
             },
-            "time": "2020-05-01T23:02:48+00:00"
+            "time": "2020-05-02T15:12:14+00:00"
         },
         {
             "name": "drupal/webform_views",
@@ -8793,6 +8793,20 @@
             ],
             "description": "Symfony BrowserKit Component",
             "homepage": "https://symfony.com",
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
             "time": "2020-03-15T09:38:08+00:00"
         },
         {
@@ -8857,5 +8871,6 @@
     "platform-dev": [],
     "platform-overrides": {
         "php": "7.0.8"
-    }
+    },
+    "plugin-api-version": "1.1.0"
 }
