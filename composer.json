@@ -3,17 +3,38 @@
     "description": "Install drops-8 with Composer on Pantheon.",
     "type": "project",
     "license": "MIT",
-    "repositories": [
-        {
-            "type": "composer",
-            "url": "https://packages.drupal.org/8"
+    "repositories": {
+      "drupal": {
+        "type": "composer",
+        "url": "https://packages.drupal.org/8"
+      },
+      "asset-packagist": {
+        "type": "composer",
+        "url": "https://asset-packagist.org"
+      },
+      "twbs/bootstrap": {
+        "type": "package",
+        "package": {
+          "name": "twbs/bootstrap",
+          "version": "4.4.1",
+          "type": "drupal-library",
+          "source": {
+            "url": "https://github.com/twbs/bootstrap",
+            "type": "git",
+            "reference": "1f531a6"
+          },
+          "require": {
+            "composer/installers": "^1.2.0"
+          }
         }
-    ],
+      }
+    },
     "require": {
         "php": ">=7.0.8",
         "composer/installers": "^1.0.20",
         "cweagans/composer-patches": "^1.0",
         "drupal/admin_toolbar": "2.x-dev",
+        "drupal/bootstrap_barrio": "4.x-dev",
         "drupal/components": "2.x-dev",
         "drupal/config_direct_save": "^1.0",
         "drupal/config_installer": "^1.0",
@@ -25,6 +46,7 @@
         "drupal/entity_browser": "2.x-dev",
         "drupal/entity_reference_revisions": "1.x-dev",
         "drupal/feeds": "3.x-dev",
+        "drupal/hti": "1.x-dev",
         "drupal/paragraphs": "1.x-dev",
         "drupal/stage_file_proxy": "1.x-dev",
         "drupal/twig_tweak": "^2.5",
@@ -34,6 +56,7 @@
         "drupal/webform_views": "5.x-dev",
         "drush-ops/behat-drush-endpoint": "^9.3",
         "drush/drush": "~8.3",
+        "oomphinc/composer-installers-extender": "^1.1",
         "pantheon-systems/drupal-integrations": "^8",
         "pantheon-systems/quicksilver-pushback": "^2",
         "rvtraveller/qs-composer-installer": "^1.1",
@@ -95,14 +118,31 @@
         ]
     },
     "extra": {
+        "installer-types": [
+            "bower-asset",
+            "npm-asset"
+        ],
         "installer-paths": {
-            "web/core": ["type:drupal-core"],
-            "web/libraries/{$name}": ["type:drupal-library"],
-            "web/modules/contrib/{$name}": ["type:drupal-module"],
-            "web/profiles/contrib/{$name}": ["type:drupal-profile"],
-            "web/themes/contrib/{$name}": ["type:drupal-theme"],
-            "drush/Commands/contrib/{$name}": ["type:drupal-drush"],
-            "web/private/scripts/quicksilver/{$name}/": ["type:quicksilver-script"]
+            "web/core": [
+              "type:drupal-core"
+            ],
+            "web/libraries/{$name}": [
+              "type:drupal-library",
+              "type:bower-asset",
+              "type:npm-asset"
+            ],
+            "web/modules/contrib/{$name}": [
+              "type:drupal-module"
+            ],
+            "web/profiles/contrib/{$name}": [
+              "type:drupal-profile"
+            ],
+            "web/themes/contrib/{$name}": [
+              "type:drupal-theme"
+            ],
+            "drush/contrib/{$name}": [
+              "type:drupal-drush"
+            ]
         },
         "build-env": {
             "install-cms": [
@@ -119,7 +159,7 @@
             },
             "file-mapping": {
                 "[project-root]/.editorconfig": false
-            }            
+            }
         }
     },
     "config": {

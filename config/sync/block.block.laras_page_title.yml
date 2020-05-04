@@ -1,0 +1,20 @@
+uuid: 677c243f-6c79-4470-825d-984a4689de4c
+langcode: en
+status: true
+dependencies:
+  theme:
+    - laras
+_core:
+  default_config_hash: 7rR9chwXvdM2H8OYMAYx9Zj3GGlPMrZp_M3ZA4thYTk
+id: laras_page_title
+theme: laras
+region: content
+weight: -50
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  provider: core
+  label_display: '0'
+visibility: {  }
