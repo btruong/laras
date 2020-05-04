@@ -1,0 +1,13 @@
+<?php
+
+/**
+ * @file
+ * Functions to support theming in the SASS Starterkit subtheme.
+ */
+
+// Include all files from the includes directory.
+$includes_path = dirname(__FILE__) . '/inc/*.inc';
+foreach (glob($includes_path) as $filename) {
+  require_once dirname(__FILE__) . '/inc/' . basename($filename);
+}
+
