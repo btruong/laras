@@ -1,0 +1,169 @@
+uuid: 246dabf9-1c74-4330-b25f-94b63a5eb01d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.entry.body
+    - field.field.node.entry.field_artist
+    - field.field.node.entry.field_category
+    - field.field.node.entry.field_entry_number
+    - field.field.node.entry.field_format
+    - field.field.node.entry.field_record_label
+    - field.field.node.entry.field_release_date
+    - field.field.node.entry.field_track_from
+    - field.field.node.entry.field_type
+    - field.field.node.entry.field_webform
+    - node.type.entry
+  module:
+    - datetime
+    - field_group
+    - path
+    - shs
+    - webform
+third_party_settings:
+  field_group:
+    group_admin:
+      children:
+        - status
+        - promote
+        - sticky
+        - path
+        - created
+        - uid
+      parent_name: ''
+      weight: 10
+      format_type: details_sidebar
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        open: false
+        required_fields: true
+        weight: 0
+      label: Admin
+id: node.entry.default
+targetEntityType: node
+bundle: entry
+mode: default
+content:
+  created:
+    type: datetime_timestamp
+    weight: 13
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_artist:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_category:
+    weight: 3
+    settings:
+      force_deepest: true
+      create_new_items: false
+      create_new_levels: false
+      display_node_count: false
+    third_party_settings: {  }
+    type: options_shs
+    region: content
+  field_entry_number:
+    weight: 8
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_format:
+    weight: 5
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_record_label:
+    weight: 4
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_release_date:
+    weight: 6
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_track_from:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_type:
+    weight: 7
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_webform:
+    weight: 9
+    settings:
+      default_data: true
+    third_party_settings: {  }
+    type: webform_entity_reference_select
+    region: content
+  path:
+    type: path
+    weight: 12
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    weight: 10
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 9
+    region: content
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 11
+    region: content
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 14
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  body: true

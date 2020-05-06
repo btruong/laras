@@ -1,0 +1,19 @@
+uuid: 21c974a0-7175-48fd-8756-88de2862e952
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_track_from
+    - node.type.entry
+id: node.entry.field_track_from
+field_name: field_track_from
+entity_type: node
+bundle: entry
+label: 'Track From'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
