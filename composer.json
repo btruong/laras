@@ -49,6 +49,7 @@
         "drupal/field_group": "3.x-dev",
         "drupal/hti": "1.x-dev",
         "drupal/paragraphs": "1.x-dev",
+        "drupal/radix": "4.x-dev",
         "drupal/shs": "1.x-dev",
         "drupal/stage_file_proxy": "1.x-dev",
         "drupal/twig_tweak": "^2.5",
