@@ -2498,7 +2498,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/feeds.git",
-                "reference": "4607c3cc036a4d9f0bcd221f71ad4ffde32b1d6b"
+                "reference": "f383fe3efe8e36c2f3a04f97e3a9c158885e9809"
             },
             "require": {
                 "drupal/core": "^8.8 || ^9"
@@ -2510,7 +2510,7 @@
                 },
                 "drupal": {
                     "version": "8.x-3.x-dev",
-                    "datestamp": "1587319095",
+                    "datestamp": "1588668657",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Project has not opted into security advisory coverage!"
@@ -2588,7 +2588,7 @@
                 "source": "https://git.drupalcode.org/project/feeds",
                 "issues": "https://www.drupal.org/project/issues/feeds"
             },
-            "time": "2020-04-30T15:05:30+00:00"
+            "time": "2020-05-05T12:44:25+00:00"
         },
         {
             "name": "drupal/hti",
@@ -2632,7 +2632,8 @@
             "homepage": "https://www.drupal.org/project/hti",
             "support": {
                 "source": "https://git.drupalcode.org/project/hti"
-            }
+            },
+            "time": "2020-01-08T07:32:40+00:00"
         },
         {
             "name": "drupal/paragraphs",
@@ -2640,7 +2641,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/paragraphs.git",
-                "reference": "a90103b834b87d6d41bab9a9e30c42a3f86f82b3"
+                "reference": "6611f51b6526a556045f8db0c72cc5ad8e8258d2"
             },
             "require": {
                 "drupal/core": "^8.8 || ^9",
@@ -2668,8 +2669,8 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.11+8-dev",
-                    "datestamp": "1585778255",
+                    "version": "8.x-1.11+9-dev",
+                    "datestamp": "1588281948",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Dev releases are not covered by Drupal security advisories."
@@ -2711,7 +2712,7 @@
             "support": {
                 "source": "https://git.drupalcode.org/project/paragraphs"
             },
-            "time": "2020-04-30T21:25:20+00:00"
+            "time": "2020-05-04T21:06:32+00:00"
         },
         {
             "name": "drupal/stage_file_proxy",
@@ -2947,7 +2948,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/webform.git",
-                "reference": "e5400eb345781645bdb9e261b376a2d2eaa6954f"
+                "reference": "2523bd60f6a84150a371443db35cbbf11f85a3a9"
             },
             "require": {
                 "drupal/core": "^8.7.7 || ^9"
@@ -2983,7 +2984,7 @@
                 },
                 "drupal": {
                     "version": "8.x-5.x-dev",
-                    "datestamp": "1588433632",
+                    "datestamp": "1588703122",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Dev releases are not covered by Drupal security advisories."
@@ -3052,7 +3053,7 @@
                 "docs": "https://www.drupal.org/docs/8/modules/webform",
                 "forum": "https://drupal.stackexchange.com/questions/tagged/webform"
             },
-            "time": "2020-05-03T14:24:51+00:00"
+            "time": "2020-05-05T21:05:37+00:00"
         },
         {
             "name": "drupal/webform_views",
@@ -8978,6 +8979,20 @@
             ],
             "description": "Symfony BrowserKit Component",
             "homepage": "https://symfony.com",
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
             "time": "2020-03-15T09:38:08+00:00"
         },
         {
@@ -9044,5 +9059,6 @@
     "platform-dev": [],
     "platform-overrides": {
         "php": "7.0.8"
-    }
+    },
+    "plugin-api-version": "1.1.0"
 }
