@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "50182cc4a50689200b3a3e0682ce78c9",
+    "content-hash": "633590d5262f2f1bb963faae492a0851",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -2591,6 +2591,68 @@
             "time": "2020-04-30T15:05:30+00:00"
         },
         {
+            "name": "drupal/field_group",
+            "version": "dev-3.x",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/field_group.git",
+                "reference": "f6f486e91c1d6690919fe4a4f837ea7480ab9f56"
+            },
+            "require": {
+                "drupal/core": "^8.8 || ^9"
+            },
+            "require-dev": {
+                "drupal/jquery_ui_accordion": "^1.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-3.x": "3.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-3.0+8-dev",
+                    "datestamp": "1587712975",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Dev releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Hydra",
+                    "homepage": "https://www.drupal.org/user/647364"
+                },
+                {
+                    "name": "Stalski",
+                    "homepage": "https://www.drupal.org/user/322618"
+                },
+                {
+                    "name": "jyve",
+                    "homepage": "https://www.drupal.org/user/591438"
+                },
+                {
+                    "name": "nils.destoop",
+                    "homepage": "https://www.drupal.org/user/361625"
+                },
+                {
+                    "name": "swentel",
+                    "homepage": "https://www.drupal.org/user/107403"
+                }
+            ],
+            "description": "Provides the field_group module.",
+            "homepage": "https://www.drupal.org/project/field_group",
+            "support": {
+                "source": "https://git.drupalcode.org/project/field_group",
+                "issues": "https://www.drupal.org/project/issues/field_group"
+            },
+            "time": "2020-04-26T09:21:35+00:00"
+        },
+        {
             "name": "drupal/hti",
             "version": "dev-1.x",
             "source": {
@@ -2712,6 +2774,55 @@
                 "source": "https://git.drupalcode.org/project/paragraphs"
             },
             "time": "2020-04-30T21:25:20+00:00"
+        },
+        {
+            "name": "drupal/shs",
+            "version": "dev-1.x",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/shs.git",
+                "reference": "e2125a9895c70efbb71f1854a7e39c48c5760d60"
+            },
+            "require": {
+                "drupal/core": "*"
+            },
+            "require-dev": {
+                "drupal/chosen": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.0-alpha4+1-dev",
+                    "datestamp": "1552463584",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Dev releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "jhedstrom",
+                    "homepage": "https://www.drupal.org/user/208732"
+                },
+                {
+                    "name": "stBorchert",
+                    "homepage": "https://www.drupal.org/user/36942"
+                }
+            ],
+            "description": "Creates a simple hierarchical select widget for taxonomy fields.",
+            "homepage": "https://www.drupal.org/project/shs",
+            "support": {
+                "source": "https://git.drupalcode.org/project/shs"
+            },
+            "time": "2019-10-21T19:10:56+00:00"
         },
         {
             "name": "drupal/stage_file_proxy",
@@ -9030,8 +9141,10 @@
         "drupal/entity_browser": 20,
         "drupal/entity_reference_revisions": 20,
         "drupal/feeds": 20,
+        "drupal/field_group": 20,
         "drupal/hti": 20,
         "drupal/paragraphs": 20,
+        "drupal/shs": 20,
         "drupal/stage_file_proxy": 20,
         "drupal/webform": 20,
         "drupal/webform_views": 20

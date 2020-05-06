@@ -1,0 +1,32 @@
+uuid: 644dae16-4369-4540-81b5-485158e75abc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_webform
+    - node.type.entry
+    - webform.webform.entry_screening
+  module:
+    - webform
+id: node.entry.field_webform
+field_name: field_webform
+entity_type: node
+bundle: entry
+label: 'Entry Screening Form'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    default_data: ''
+    status: open
+    open: ''
+    close: ''
+    target_uuid: 1b0c72af-cf16-4599-94c3-d2ec8519d593
+default_value_callback: ''
+settings:
+  handler: 'default:webform'
+  handler_settings:
+    target_bundles: null
+    auto_create: false
+field_type: webform

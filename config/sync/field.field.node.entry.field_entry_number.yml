@@ -1,0 +1,19 @@
+uuid: 0d65ca6c-83fb-4d12-8cc6-7188c837f4f8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_entry_number
+    - node.type.entry
+id: node.entry.field_entry_number
+field_name: field_entry_number
+entity_type: node
+bundle: entry
+label: 'Entry Number'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
