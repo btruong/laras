@@ -12,15 +12,15 @@ id: entry_screening
 title: 'Entry Screening'
 description: ''
 category: ''
-elements: "status:\n  '#type': select\n  '#title': Status\n  '#options':\n    accept: Accept\n    'not eligible': 'Not Eligible'\n    'suggest category': 'Suggest Category'\n  '#required': true\ncategory:\n  '#type': webform_term_select\n  '#title': 'Suggested Category'\n  '#description': 'Select a category for this entry.'\n  '#empty_option': 'Select a Category'\n  '#states':\n    visible:\n      ':input[name=\"status\"]':\n        value: 'suggest category'\n  '#vocabulary': categories\n  '#breadcrumb': true\n  '#tree_delimiter': ''"
+elements: "status:\n  '#type': select\n  '#title': Status\n  '#options':\n    accept: Accept\n    'not eligible': 'Not Eligible'\n    'suggest category': 'Suggest Category'\n  '#required': true\ncategory:\n  '#type': webform_term_select\n  '#title': 'Suggested Category'\n  '#empty_option': 'Select a Category'\n  '#required': true\n  '#required_error': 'You must select a Suggested Category'\n  '#states':\n    visible:\n      ':input[name=\"status\"]':\n        value: 'suggest category'\n  '#vocabulary': categories\n  '#breadcrumb': true\n  '#tree_delimiter': ''\nnotes:\n  '#type': textarea\n  '#title': Notes"
 css: ''
 javascript: ''
 settings:
-  ajax: false
+  ajax: true
   ajax_scroll_top: form
-  ajax_progress_type: ''
-  ajax_effect: ''
-  ajax_speed: null
+  ajax_progress_type: throbber
+  ajax_effect: fade
+  ajax_speed: 1000
   page: true
   page_submit_path: ''
   page_confirm_path: ''
@@ -58,7 +58,13 @@ settings:
   submission_log: true
   submission_views: {  }
   submission_views_replace: {  }
-  submission_user_columns: {  }
+  submission_user_columns:
+    - serial
+    - created
+    - completed
+    - changed
+    - element__status
+    - element__category
   submission_user_duplicate: false
   submission_access_denied: default
   submission_access_denied_title: ''
@@ -99,9 +105,9 @@ settings:
   draft_loaded_message: ''
   draft_pending_single_message: ''
   draft_pending_multiple_message: ''
-  confirmation_type: page
+  confirmation_type: inline
   confirmation_title: ''
-  confirmation_message: ''
+  confirmation_message: 'Thank you. Your screening has been submitted.'
   confirmation_url: ''
   confirmation_attributes: {  }
   confirmation_back: true

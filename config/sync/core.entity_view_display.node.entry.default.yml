@@ -16,9 +16,16 @@ dependencies:
     - node.type.entry
   module:
     - datetime
+    - field_layout
     - options
+    - radix_layouts
     - user
     - webform
+third_party_settings:
+  field_layout:
+    id: radix_burr_flipped
+    settings:
+      label: ''
 id: node.entry.default
 targetEntityType: node
 bundle: entry
@@ -31,7 +38,7 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
-    region: content
+    region: sidebar
   field_category:
     weight: 2
     label: inline
@@ -39,11 +46,11 @@ content:
       link: false
     third_party_settings: {  }
     type: entity_reference_label
-    region: content
+    region: sidebar
   field_entry_number:
     type: string
     weight: 7
-    region: content
+    region: sidebar
     label: inline
     settings:
       link_to_entity: false
@@ -54,7 +61,7 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: list_default
-    region: content
+    region: sidebar
   field_record_label:
     weight: 3
     label: inline
@@ -62,7 +69,7 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
-    region: content
+    region: sidebar
   field_release_date:
     weight: 5
     label: inline
@@ -71,7 +78,7 @@ content:
       date_format: m/d/Y
     third_party_settings: {  }
     type: datetime_custom
-    region: content
+    region: sidebar
   field_track_from:
     weight: 1
     label: inline
@@ -79,22 +86,22 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
-    region: content
+    region: sidebar
   field_type:
     weight: 6
     label: inline
     settings: {  }
     third_party_settings: {  }
     type: list_default
-    region: content
+    region: sidebar
   field_webform:
     weight: 8
-    label: above
+    label: visually_hidden
     settings:
       source_entity: true
     third_party_settings: {  }
     type: webform_entity_reference_entity_view
-    region: content
+    region: contentmain
 hidden:
   body: true
   links: true

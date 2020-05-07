@@ -1,0 +1,22 @@
+uuid: e19fcb22-b3df-4fe7-8e40-a5871cb7a974
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - laras
+_core:
+  default_config_hash: 8I8iACSa0sKO3k3jlvUG1ge52rfcKX7USJAQYnzuBgg
+id: laras_help
+theme: laras
+region: header
+weight: -3
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  provider: help
+  label_display: '0'
+visibility: {  }
