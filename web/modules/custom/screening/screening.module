@@ -1,0 +1,42 @@
+<?php
+
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_form_alter().
+ */
+function screening_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  if (isset($form['#webform_id'])) {
+    // Add user check and specific webform_id check here.
+    if ($form['#webform_id'] == 'entry_screening') {
+      // Remove Submission Information.
+      unset($form['information']);
+    }
+  }
+}
+
+/**
+ * Implements hook_node_grants().
+ */
+function screening_node_grants(\Drupal\Core\Session\AccountInterface $account, $op) {
+//  if ($account
+//    ->hasPermission('access private content')) {
+//    $grants['example'] = [
+//      1,
+//    ];
+//  }
+//  if ($account
+//    ->id()) {
+//    $grants['example_author'] = [
+//      $account
+//        ->id(),
+//    ];
+//  }
+  switch ($op) {
+    case 'view':
+      vdp('view');
+    default:
+      return $grants;
+  }
+  return $grants;
+}

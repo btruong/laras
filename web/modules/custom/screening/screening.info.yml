@@ -1,0 +1,7 @@
+name: 'Screening'
+type: module
+description: 'Customizations related to screening.'
+core: 8.x
+core_version_requirement: ^8 || ^9
+package: LARAS
+

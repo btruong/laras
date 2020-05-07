@@ -1,0 +1,10 @@
+style:
+  version: VERSION
+  css:
+    theme:
+      assets/css/laras.style.css: {}
+  js:
+    assets/js/laras.script.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal

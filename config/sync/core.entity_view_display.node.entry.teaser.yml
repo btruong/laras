@@ -16,27 +16,21 @@ dependencies:
     - field.field.node.entry.field_webform
     - node.type.entry
   module:
-    - text
+    - field_layout
+    - layout_discovery
     - user
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
 id: node.entry.teaser
 targetEntityType: node
 bundle: entry
 mode: teaser
-content:
-  body:
-    label: hidden
-    type: text_summary_or_trimmed
-    weight: 101
-    settings:
-      trim_length: 600
-    third_party_settings: {  }
-    region: content
-  links:
-    weight: 100
-    settings: {  }
-    third_party_settings: {  }
-    region: content
+content: {  }
 hidden:
+  body: true
   field_artist: true
   field_category: true
   field_entry_number: true
@@ -46,3 +40,4 @@ hidden:
   field_track_from: true
   field_type: true
   field_webform: true
+  links: true

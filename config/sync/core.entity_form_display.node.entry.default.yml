@@ -17,6 +17,8 @@ dependencies:
   module:
     - datetime
     - field_group
+    - field_layout
+    - layout_discovery
     - path
     - shs
     - webform
@@ -42,6 +44,10 @@ third_party_settings:
         required_fields: true
         weight: 0
       label: Admin
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
 id: node.entry.default
 targetEntityType: node
 bundle: entry

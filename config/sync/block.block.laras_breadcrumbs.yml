@@ -1,0 +1,22 @@
+uuid: 77169c4d-8690-4245-8284-04e9340e1e0e
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - laras
+_core:
+  default_config_hash: oXUb3JZR2WW5VOdw4HrhRicCsq51mCgLfRyvheG68ck
+id: laras_breadcrumbs
+theme: laras
+region: header
+weight: -4
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  provider: system
+  label_display: '0'
+visibility: {  }

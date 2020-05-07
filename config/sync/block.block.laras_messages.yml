@@ -1,0 +1,22 @@
+uuid: ec819e0a-9db6-4680-8e81-5e5f108d07e5
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - laras
+_core:
+  default_config_hash: KHQIJ7Vfl25lTjzIc7qIvnuistt-Mw2O0kG4jCofmkI
+id: laras_messages
+theme: laras
+region: header
+weight: -5
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  provider: system
+  label_display: '0'
+visibility: {  }

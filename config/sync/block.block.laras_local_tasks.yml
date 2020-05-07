@@ -1,0 +1,22 @@
+uuid: 8662ff00-1309-4fa6-8cc2-a72b98012882
+langcode: en
+status: true
+dependencies:
+  theme:
+    - laras
+_core:
+  default_config_hash: X9I1OB0W3WlWtrK-CNcg6hNWwa8wficanpH8pYnDZDE
+id: laras_local_tasks
+theme: laras
+region: header
+weight: -1
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: true
+visibility: {  }
