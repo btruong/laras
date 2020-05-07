@@ -1,0 +1,5 @@
+# Schema for the configuration files of the LARAS theme.
+
+laras.settings:
+  type: theme_settings
+  label: 'LARAS settings'
