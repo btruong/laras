@@ -15,28 +15,59 @@ function screening_form_alter(&$form, FormStateInterface $form_state, $form_id) 
   }
 }
 
+function screening_entity_view(array &$build, \Drupal\Core\Entity\EntityInterface $entity, \Drupal\Core\Entity\Display\EntityViewDisplayInterface $display, $view_mode) {
+//  $currentUser = \Drupal::currentUser();
+//  if ($currentUser->isAuthenticated()) {
+//    $account = \Drupal\user\Entity\User::load($currentUser->id());
+//    // check to see ig current user is assigned any categories
+//    if ($account->hasField('field_assigned_categories') && !$account->field_assigned_categories->isEmpty()) {
+//      foreach ($account->get('field_assigned_categories')->getValue() as $assigned_cat) {
+//        vdp($assigned_cat["target_id"]);
+//      }
+//    }
+//  }
+}
+
+/**
+ * Implements hook_node_access_records().
+ */
+function screening_node_access_records(\Drupal\node\NodeInterface $node) {
+  $grants = [];
+  // If node has a category, set up grant based on category
+  if ($node->hasField('field_category') && !$node->field_category->isEmpty()) {
+    // Only grant access if the assigned category of the viewing user is the
+    // same category assigned to the node
+    // If we fail to check $node->isPublished(), all users would be able
+    // to view an unpublished node.
+    if ($node->isPublished()) {
+      $grants[] = [
+        'realm' => 'screening',
+        'gid' => $node->get('field_category')->entity->id(),
+        'grant_view' => 1,
+        'grant_update' => 0,
+        'grant_delete' => 0,
+      ];
+    }
+    return $grants;
+  }
+}
+
 /**
  * Implements hook_node_grants().
  */
 function screening_node_grants(\Drupal\Core\Session\AccountInterface $account, $op) {
-//  if ($account
-//    ->hasPermission('access private content')) {
-//    $grants['example'] = [
-//      1,
-//    ];
-//  }
-//  if ($account
-//    ->id()) {
-//    $grants['example_author'] = [
-//      $account
-//        ->id(),
-//    ];
-//  }
-  switch ($op) {
-    case 'view':
-      vdp('view');
-    default:
-      return $grants;
+  $grants = [];
+  if ($op == 'view') {
+    if ($account->isAuthenticated()) {
+      $user = \Drupal\user\Entity\User::load($account->id());
+      // check to see if current user is assigned any categories
+      if ($user->hasField('field_assigned_categories') && !$user->field_assigned_categories->isEmpty()) {
+        foreach ($user->get('field_assigned_categories')->getValue() as $assigned_cat) {
+          // Set up grant access based on assigned category
+          $grants['screening'][] = $assigned_cat["target_id"];
+        }
+      }
+    }
   }
   return $grants;
 }

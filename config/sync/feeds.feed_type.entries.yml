@@ -1,0 +1,260 @@
+uuid: da9b491b-6594-4f2b-8c2e-df7b618fe4cf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.entry.field_amazon
+    - field.field.node.entry.field_apple
+    - field.field.node.entry.field_artist
+    - field.field.node.entry.field_bandcamp
+    - field.field.node.entry.field_category
+    - field.field.node.entry.field_deezer
+    - field.field.node.entry.field_entry_number
+    - field.field.node.entry.field_record_label
+    - field.field.node.entry.field_release_date
+    - field.field.node.entry.field_spotify
+    - field.field.node.entry.field_tidal
+    - field.field.node.entry.field_track_from
+    - field.field.node.entry.field_type
+    - field.field.node.entry.field_vimeo
+    - field.field.node.entry.field_youtube_music
+    - field.field.node.entry.field_youtube_video
+    - node.type.entry
+  module:
+    - node
+id: entries
+label: Entries
+description: ''
+help: ''
+import_period: -1
+fetcher: upload
+fetcher_configuration:
+  allowed_extensions: 'txt csv tsv xml opml'
+  directory: 'private://feeds'
+parser: csv
+parser_configuration:
+  delimiter: ','
+  no_headers: false
+  line_limit: 100
+processor: 'entity:node'
+processor_configuration:
+  langcode: en
+  update_existing: 2
+  update_non_existent: _keep
+  expire: -1
+  owner_feed_author: false
+  owner_id: 0
+  authorize: true
+  skip_hash_check: false
+  values:
+    type: entry
+custom_sources:
+  title:
+    label: Title
+    value: Title
+    machine_name: title
+  artist:
+    label: Artist
+    value: Artist
+    machine_name: artist
+  track_from:
+    label: 'Track From'
+    value: 'Track From'
+    machine_name: track_from
+  category:
+    label: Category
+    value: Category
+    machine_name: category
+  label:
+    label: Label
+    value: Label
+    machine_name: label
+  satv_format:
+    label: 'SATV/ Format'
+    value: 'SATV/ Format'
+    machine_name: satv_format
+  rel_date:
+    label: 'Rel. Date'
+    value: 'Rel. Date'
+    machine_name: rel_date
+  type:
+    label: Type
+    value: Type
+    machine_name: type
+  entry_:
+    label: 'Entry #'
+    value: 'Entry #'
+    machine_name: entry_
+  amazon:
+    label: Amazon
+    value: Amazon
+    machine_name: amazon
+  apple:
+    label: Apple
+    value: Apple
+    machine_name: apple
+  bandcamp:
+    label: Bandcamp
+    value: Bandcamp
+    machine_name: bandcamp
+  deezer:
+    label: Deezer
+    value: Deezer
+    machine_name: deezer
+  spotify:
+    label: Spotify
+    value: Spotify
+    machine_name: spotify
+  tidal:
+    label: Tidal
+    value: Tidal
+    machine_name: tidal
+  youtube_music:
+    label: 'YouTube Music'
+    value: 'YouTube Music'
+    machine_name: youtube_music
+  youtube_video:
+    label: 'YouTube Video'
+    value: 'YouTube Video'
+    machine_name: youtube_video
+  vimeo:
+    label: Vimeo
+    value: Vimeo
+    machine_name: vimeo
+  format:
+    label: Format
+    value: Format
+    machine_name: format
+mappings:
+  -
+    target: title
+    map:
+      value: title
+    unique: {  }
+    settings:
+      language: null
+  -
+    target: field_artist
+    map:
+      value: artist
+    unique: {  }
+    settings:
+      language: null
+  -
+    target: field_track_from
+    map:
+      value: track_from
+    unique: {  }
+    settings:
+      language: null
+  -
+    target: field_category
+    map:
+      target_id: category
+    settings:
+      language: null
+      reference_by: name
+      autocreate: false
+  -
+    target: field_record_label
+    map:
+      value: label
+    unique: {  }
+    settings:
+      language: null
+  -
+    target: field_release_date
+    map:
+      value: rel_date
+    settings:
+      language: ''
+      timezone: UTC
+  -
+    target: field_type
+    map:
+      value: type
+    settings:
+      language: null
+  -
+    target: field_type
+    map:
+      value: ''
+    settings:
+      language: null
+  -
+    target: field_entry_number
+    map:
+      value: entry_
+    unique:
+      value: '1'
+    settings:
+      language: null
+  -
+    target: field_amazon
+    map:
+      uri: amazon
+      title: ''
+    settings:
+      language: null
+  -
+    target: field_apple
+    map:
+      uri: apple
+      title: ''
+    settings:
+      language: null
+  -
+    target: field_bandcamp
+    map:
+      uri: bandcamp
+      title: ''
+    settings:
+      language: null
+  -
+    target: field_deezer
+    map:
+      uri: deezer
+      title: ''
+    settings:
+      language: null
+  -
+    target: field_spotify
+    map:
+      uri: spotify
+      title: ''
+    settings:
+      language: null
+  -
+    target: field_tidal
+    map:
+      uri: tidal
+      title: ''
+    settings:
+      language: null
+  -
+    target: field_youtube_music
+    map:
+      uri: youtube_music
+      title: ''
+    settings:
+      language: null
+  -
+    target: field_youtube_video
+    map:
+      uri: youtube_video
+      title: ''
+    settings:
+      language: null
+  -
+    target: field_vimeo
+    map:
+      uri: vimeo
+      title: ''
+    settings:
+      language: null
+  -
+    target: field_format
+    map:
+      value: format
+    settings:
+      language: null

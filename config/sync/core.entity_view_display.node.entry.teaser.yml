@@ -5,15 +5,25 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.entry.body
+    - field.field.node.entry.feeds_item
+    - field.field.node.entry.field_amazon
+    - field.field.node.entry.field_apple
     - field.field.node.entry.field_artist
+    - field.field.node.entry.field_bandcamp
     - field.field.node.entry.field_category
+    - field.field.node.entry.field_deezer
     - field.field.node.entry.field_entry_number
     - field.field.node.entry.field_format
     - field.field.node.entry.field_record_label
     - field.field.node.entry.field_release_date
+    - field.field.node.entry.field_spotify
+    - field.field.node.entry.field_tidal
     - field.field.node.entry.field_track_from
     - field.field.node.entry.field_type
+    - field.field.node.entry.field_vimeo
     - field.field.node.entry.field_webform
+    - field.field.node.entry.field_youtube_music
+    - field.field.node.entry.field_youtube_video
     - node.type.entry
   module:
     - field_layout
@@ -31,13 +41,23 @@ mode: teaser
 content: {  }
 hidden:
   body: true
+  feeds_item: true
+  field_amazon: true
+  field_apple: true
   field_artist: true
+  field_bandcamp: true
   field_category: true
+  field_deezer: true
   field_entry_number: true
   field_format: true
   field_record_label: true
   field_release_date: true
+  field_spotify: true
+  field_tidal: true
   field_track_from: true
   field_type: true
+  field_vimeo: true
   field_webform: true
+  field_youtube_music: true
+  field_youtube_video: true
   links: true

@@ -1,0 +1,23 @@
+uuid: 6f114aa3-fc4d-4072-ad4e-950e5794126c
+langcode: en
+status: true
+dependencies:
+  module:
+    - field_permissions
+    - link
+    - node
+third_party_settings:
+  field_permissions:
+    permission_type: public
+id: node.field_deezer
+field_name: field_deezer
+entity_type: node
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
