@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "46a789bc7e7ab4e20356aaecc1d5f0be",
+    "content-hash": "b8f841eb491cde7a56881675bd874cfe",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -2543,6 +2543,75 @@
             "time": "2020-04-30T15:05:30+00:00"
         },
         {
+            "name": "drupal/feeds_tamper",
+            "version": "dev-2.x",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/feeds_tamper.git",
+                "reference": "7e91822823651473c1dcd6c8eb4a779f15888ae8"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9",
+                "drupal/feeds": "~3.0",
+                "drupal/tamper": "~1.0"
+            },
+            "require-dev": {
+                "drupal/feeds": "3.x-dev"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-2.x": "2.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-2.0-beta1+1-dev",
+                    "datestamp": "1588259315",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Dev releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Bobík",
+                    "homepage": "https://www.drupal.org/user/123612"
+                },
+                {
+                    "name": "MegaChriz",
+                    "homepage": "https://www.drupal.org/user/654114"
+                },
+                {
+                    "name": "franz",
+                    "homepage": "https://www.drupal.org/user/581844"
+                },
+                {
+                    "name": "mausolos",
+                    "homepage": "https://www.drupal.org/user/642118"
+                },
+                {
+                    "name": "twistor",
+                    "homepage": "https://www.drupal.org/user/473738"
+                }
+            ],
+            "description": "Modify feeds data before it gets saved.",
+            "homepage": "http://drupal.org/project/feeds_tamper",
+            "keywords": [
+                "Drupal",
+                "feeds",
+                "tamper"
+            ],
+            "support": {
+                "source": "http://cgit.drupalcode.org/feeds_tamper",
+                "issues": "http://drupal.org/project/issues/feeds_tamper"
+            },
+            "time": "2020-05-06T08:46:00+00:00"
+        },
+        {
             "name": "drupal/field_group",
             "version": "dev-3.x",
             "source": {
@@ -3011,6 +3080,65 @@
                 "source": "https://git.drupalcode.org/project/stage_file_proxy"
             },
             "time": "2020-04-21T22:53:05+00:00"
+        },
+        {
+            "name": "drupal/tamper",
+            "version": "dev-1.x",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/tamper.git",
+                "reference": "e106cc72be9982592fbafe5011bcc80fa542c09e"
+            },
+            "require": {
+                "drupal/core": "^8.8 || ^9"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.0-alpha1+8-dev",
+                    "datestamp": "1588877480",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Project has not opted into security advisory coverage!"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "MegaChriz",
+                    "homepage": "https://www.drupal.org/user/654114"
+                },
+                {
+                    "name": "ericgsmith",
+                    "homepage": "https://www.drupal.org/user/1649952"
+                },
+                {
+                    "name": "jamesdixon",
+                    "homepage": "https://www.drupal.org/user/762570"
+                },
+                {
+                    "name": "twistor",
+                    "homepage": "https://www.drupal.org/user/473738"
+                }
+            ],
+            "description": "Generic plugin to modify data.",
+            "homepage": "https://www.drupal.org/project/tamper",
+            "keywords": [
+                "Drupal",
+                "tamper"
+            ],
+            "support": {
+                "source": "http://cgit.drupalcode.org/tamper",
+                "issues": "http://drupal.org/project/issues/tamper"
+            },
+            "time": "2020-05-08T17:41:38+00:00"
         },
         {
             "name": "drupal/token",
@@ -9274,6 +9402,7 @@
         "drupal/entity_browser": 20,
         "drupal/entity_reference_revisions": 20,
         "drupal/feeds": 20,
+        "drupal/feeds_tamper": 20,
         "drupal/field_group": 20,
         "drupal/field_permissions": 20,
         "drupal/hti": 20,
@@ -9281,6 +9410,7 @@
         "drupal/radix": 20,
         "drupal/shs": 20,
         "drupal/stage_file_proxy": 20,
+        "drupal/tamper": 20,
         "drupal/token": 20,
         "drupal/webform": 20,
         "drupal/webform_views": 20
@@ -9293,5 +9423,6 @@
     "platform-dev": [],
     "platform-overrides": {
         "php": "7.0.8"
-    }
+    },
+    "plugin-api-version": "1.1.0"
 }
