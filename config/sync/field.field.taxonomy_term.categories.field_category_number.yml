@@ -1,0 +1,23 @@
+uuid: 31679318-73e3-48e4-af77-a6bb7ddc9133
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_category_number
+    - taxonomy.vocabulary.categories
+id: taxonomy_term.categories.field_category_number
+field_name: field_category_number
+entity_type: taxonomy_term
+bundle: categories
+label: 'Category Number'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer
