@@ -1,0 +1,78 @@
+uuid: 458e82a1-1e4a-4669-832a-cfcc6ebbc359
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.categories.field_eligible_transfers
+    - taxonomy.vocabulary.categories
+  module:
+    - feeds_tamper
+    - taxonomy
+third_party_settings:
+  feeds_tamper:
+    tampers:
+      89833a75-c592-46b2-a3b5-3fc53d96b15f:
+        separator: '%n'
+        limit: null
+        plugin: explode
+        source: eligible_categories
+        weight: 0
+        label: Explode
+        uuid: 89833a75-c592-46b2-a3b5-3fc53d96b15f
+id: categories
+label: Categories
+description: ''
+help: ''
+import_period: -1
+fetcher: upload
+fetcher_configuration:
+  allowed_extensions: 'txt csv tsv xml opml'
+  directory: 'private://feeds'
+parser: csv
+parser_configuration:
+  delimiter: ','
+  no_headers: false
+  line_limit: 100
+processor: 'entity:taxonomy_term'
+processor_configuration:
+  langcode: en
+  update_existing: 2
+  update_non_existent: _keep
+  expire: -1
+  skip_hash_check: true
+  values:
+    vid: categories
+  owner_id: 0
+  authorize: false
+  owner_feed_author: false
+custom_sources:
+  name:
+    label: Name
+    value: Name
+    machine_name: name
+  parent:
+    label: Parent
+    value: Parent
+    machine_name: parent
+  eligible_categories:
+    label: 'Eligible Categories'
+    value: 'Eligible Categories'
+    machine_name: eligible_categories
+mappings:
+  -
+    target: name
+    map:
+      value: name
+    unique:
+      value: '1'
+    settings:
+      language: null
+  -
+    target: field_eligible_transfers
+    map:
+      target_id: eligible_categories
+    settings:
+      language: null
+      reference_by: name
+      autocreate: false
+      feeds_item: false

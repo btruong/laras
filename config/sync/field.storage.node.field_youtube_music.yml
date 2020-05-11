@@ -1,0 +1,23 @@
+uuid: 49b0b01b-4de9-43ed-9b9c-497f2349d6f5
+langcode: en
+status: true
+dependencies:
+  module:
+    - field_permissions
+    - link
+    - node
+third_party_settings:
+  field_permissions:
+    permission_type: public
+id: node.field_youtube_music
+field_name: field_youtube_music
+entity_type: node
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

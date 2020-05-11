@@ -4,19 +4,31 @@ status: true
 dependencies:
   config:
     - field.field.node.entry.body
+    - field.field.node.entry.feeds_item
+    - field.field.node.entry.field_amazon
+    - field.field.node.entry.field_apple
     - field.field.node.entry.field_artist
+    - field.field.node.entry.field_bandcamp
     - field.field.node.entry.field_category
+    - field.field.node.entry.field_deezer
     - field.field.node.entry.field_entry_number
     - field.field.node.entry.field_format
     - field.field.node.entry.field_record_label
     - field.field.node.entry.field_release_date
+    - field.field.node.entry.field_spotify
+    - field.field.node.entry.field_tidal
     - field.field.node.entry.field_track_from
     - field.field.node.entry.field_type
+    - field.field.node.entry.field_vimeo
     - field.field.node.entry.field_webform
+    - field.field.node.entry.field_youtube_music
+    - field.field.node.entry.field_youtube_video
     - node.type.entry
   module:
     - datetime
+    - field_group
     - field_layout
+    - link
     - options
     - radix_layouts
     - user
@@ -26,11 +38,58 @@ third_party_settings:
     id: radix_burr_flipped
     settings:
       label: ''
+  field_group:
+    group_stream:
+      children:
+        - field_spotify
+        - field_amazon
+        - field_apple
+        - field_bandcamp
+        - field_deezer
+        - field_tidal
+        - field_youtube_music
+        - field_youtube_video
+        - field_vimeo
+      parent_name: ''
+      weight: 8
+      format_type: details
+      region: sidebar
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        open: true
+        required_fields: false
+      label: Stream
 id: node.entry.default
 targetEntityType: node
 bundle: entry
 mode: default
 content:
+  field_amazon:
+    weight: 10
+    label: above
+    settings:
+      trim_length: 80
+      target: _blank
+      url_only: false
+      url_plain: false
+      rel: '0'
+    third_party_settings: {  }
+    type: link
+    region: sidebar
+  field_apple:
+    weight: 11
+    label: above
+    settings:
+      trim_length: 80
+      target: _blank
+      url_only: false
+      url_plain: false
+      rel: '0'
+    third_party_settings: {  }
+    type: link
+    region: sidebar
   field_artist:
     weight: 0
     label: inline
@@ -39,6 +98,18 @@ content:
     third_party_settings: {  }
     type: string
     region: sidebar
+  field_bandcamp:
+    weight: 12
+    label: above
+    settings:
+      trim_length: 80
+      target: _blank
+      url_only: false
+      url_plain: false
+      rel: '0'
+    third_party_settings: {  }
+    type: link
+    region: sidebar
   field_category:
     weight: 2
     label: inline
@@ -46,6 +117,18 @@ content:
       link: false
     third_party_settings: {  }
     type: entity_reference_label
+    region: sidebar
+  field_deezer:
+    weight: 13
+    label: above
+    settings:
+      trim_length: 80
+      target: _blank
+      url_only: false
+      url_plain: false
+      rel: '0'
+    third_party_settings: {  }
+    type: link
     region: sidebar
   field_entry_number:
     type: string
@@ -79,6 +162,30 @@ content:
     third_party_settings: {  }
     type: datetime_custom
     region: sidebar
+  field_spotify:
+    weight: 9
+    label: above
+    settings:
+      trim_length: 80
+      target: _blank
+      url_only: false
+      url_plain: false
+      rel: '0'
+    third_party_settings: {  }
+    type: link
+    region: sidebar
+  field_tidal:
+    weight: 14
+    label: above
+    settings:
+      trim_length: 80
+      target: _blank
+      url_only: false
+      url_plain: false
+      rel: '0'
+    third_party_settings: {  }
+    type: link
+    region: sidebar
   field_track_from:
     weight: 1
     label: inline
@@ -94,14 +201,51 @@ content:
     third_party_settings: {  }
     type: list_default
     region: sidebar
+  field_vimeo:
+    weight: 17
+    label: above
+    settings:
+      trim_length: 80
+      target: _blank
+      url_only: false
+      url_plain: false
+      rel: '0'
+    third_party_settings: {  }
+    type: link
+    region: sidebar
   field_webform:
-    weight: 8
+    weight: 18
     label: visually_hidden
     settings:
       source_entity: true
     third_party_settings: {  }
     type: webform_entity_reference_entity_view
     region: contentmain
+  field_youtube_music:
+    weight: 15
+    label: above
+    settings:
+      trim_length: 80
+      target: _blank
+      url_only: false
+      url_plain: false
+      rel: '0'
+    third_party_settings: {  }
+    type: link
+    region: sidebar
+  field_youtube_video:
+    weight: 16
+    label: above
+    settings:
+      trim_length: 80
+      target: _blank
+      url_only: false
+      url_plain: false
+      rel: '0'
+    third_party_settings: {  }
+    type: link
+    region: sidebar
 hidden:
   body: true
+  feeds_item: true
   links: true
