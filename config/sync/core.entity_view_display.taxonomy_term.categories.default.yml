@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.taxonomy_term.categories.feeds_item
+    - field.field.taxonomy_term.categories.field_category_number
     - field.field.taxonomy_term.categories.field_eligible_transfers
     - taxonomy.vocabulary.categories
   module:
@@ -27,6 +28,15 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_category_number:
+    weight: 2
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
   field_eligible_transfers:
     weight: 1
     label: above
