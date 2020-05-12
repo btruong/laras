@@ -1,0 +1,70 @@
+uuid: 0132d9a5-a209-496c-b52a-c928e1c89d19
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.categories.field_category_number
+    - taxonomy.vocabulary.categories
+  module:
+    - feeds_tamper
+    - taxonomy
+third_party_settings:
+  feeds_tamper:
+    tampers:
+      62a7eceb-95c9-48ff-aeeb-a5c453a5a6b2:
+        plugin: cast_to_int
+        source: category_number
+        weight: 0
+        label: 'Cast to integer'
+        uuid: 62a7eceb-95c9-48ff-aeeb-a5c453a5a6b2
+id: category_numbers
+label: 'Category Numbers'
+description: ''
+help: ''
+import_period: -1
+fetcher: upload
+fetcher_configuration:
+  allowed_extensions: 'txt csv tsv xml opml'
+  directory: 'private://feeds'
+parser: csv
+parser_configuration:
+  delimiter: ','
+  no_headers: false
+  line_limit: 100
+processor: 'entity:taxonomy_term'
+processor_configuration:
+  langcode: en
+  update_existing: 2
+  update_non_existent: _keep
+  expire: -1
+  skip_hash_check: false
+  values:
+    vid: categories
+  owner_id: 0
+  authorize: false
+  owner_feed_author: false
+custom_sources:
+  name:
+    label: Name
+    value: Name
+    machine_name: name
+  category_number:
+    label: 'Category Number'
+    value: 'Category Number'
+    machine_name: category_number
+mappings:
+  -
+    target: name
+    map:
+      value: name
+    unique:
+      value: '1'
+    settings:
+      language: null
+  -
+    target: field_category_number
+    map:
+      value: category_number
+    unique: {  }
+    settings:
+      language: null
