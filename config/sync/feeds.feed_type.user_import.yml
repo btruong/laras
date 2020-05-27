@@ -1,0 +1,107 @@
+uuid: a65ef453-0ee1-465a-865b-1f7e87353ec3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.user.user.field_assigned_categories
+    - field.field.user.user.field_first_name
+    - field.field.user.user.field_last_name
+  module:
+    - feeds_tamper
+    - user
+third_party_settings:
+  feeds_tamper:
+    tampers:
+      ef30568e-a917-4578-a8f2-efbf2186a217:
+        separator: '%n'
+        limit: null
+        plugin: explode
+        source: assigned_categories
+        weight: 0
+        label: Explode
+        uuid: ef30568e-a917-4578-a8f2-efbf2186a217
+id: user_import
+label: 'User Import'
+description: ''
+help: ''
+import_period: -1
+fetcher: upload
+fetcher_configuration:
+  allowed_extensions: 'txt csv tsv xml opml'
+  directory: 'private://feeds'
+parser: csv
+parser_configuration:
+  delimiter: ','
+  no_headers: false
+  line_limit: 100
+processor: 'entity:user'
+processor_configuration:
+  langcode: en
+  update_existing: 0
+  update_non_existent: _keep
+  expire: -1
+  skip_hash_check: false
+  owner_id: 0
+  values: {  }
+  authorize: false
+  owner_feed_author: false
+custom_sources:
+  username:
+    label: Username
+    value: Username
+    machine_name: username
+  email:
+    label: Email
+    value: Email
+    machine_name: email
+  assigned_categories:
+    label: 'Assigned Categories'
+    value: 'Assigned Categories'
+    machine_name: assigned_categories
+  first_name:
+    label: 'First Name'
+    value: 'First Name'
+    machine_name: first_name
+  last_name:
+    label: 'Last Name'
+    value: 'Last Name'
+    machine_name: last_name
+mappings:
+  -
+    target: name
+    map:
+      value: username
+    unique:
+      value: '1'
+    settings: {  }
+  -
+    target: mail
+    map:
+      value: email
+    unique:
+      value: '1'
+    settings:
+      defuse: false
+  -
+    target: field_assigned_categories
+    map:
+      target_id: assigned_categories
+    settings:
+      language: null
+      reference_by: name
+      autocreate: false
+      feeds_item: false
+  -
+    target: field_first_name
+    map:
+      value: first_name
+    unique: {  }
+    settings:
+      language: null
+  -
+    target: field_last_name
+    map:
+      value: last_name
+    unique: {  }
+    settings:
+      language: null
