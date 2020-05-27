@@ -3,12 +3,12 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.user.user.feeds_item
     - field.field.user.user.field_assigned_categories
-    - field.field.user.user.user_picture
-    - image.style.thumbnail
+    - field.field.user.user.field_first_name
+    - field.field.user.user.field_last_name
   module:
     - field_layout
-    - image
     - layout_discovery
     - shs
     - user
@@ -30,7 +30,7 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_assigned_categories:
-    weight: 2
+    weight: 3
     settings:
       force_deepest: true
       create_new_items: false
@@ -39,15 +39,24 @@ content:
     third_party_settings: {  }
     type: options_shs
     region: content
-  user_picture:
-    type: image_image
-    settings:
-      progress_indicator: throbber
-      preview_image_style: thumbnail
-    third_party_settings: {  }
+  field_first_name:
     weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_last_name:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
     region: content
 hidden:
   contact: true
+  feeds_item: true
   language: true
   timezone: true
