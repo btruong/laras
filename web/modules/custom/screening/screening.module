@@ -71,3 +71,36 @@ function screening_node_grants(\Drupal\Core\Session\AccountInterface $account, $
   }
   return $grants;
 }
+
+/**
+ * Implements hook_webform_element_alter().
+ *
+ * @param array              $element
+ * @param FormStateInterface $form_state
+ * @param array              $context
+ */
+function screening_webform_element_alter(array &$element, FormStateInterface $form_state, array $context) {
+  // Ensure only eligible categories appear in the suggested category field for screening entry webform
+  if (isset($element['#webform_id']) && $element['#webform_id'] === 'entry_screening--category') {
+    // Make sure we're on an appropriate entry node page.
+    $route_match = Drupal::routeMatch();
+    if ($route_match->getRouteName() == 'entity.node.canonical') {
+      $node = $route_match->getParameter('node');
+      // Make sure entry node has a category
+      $tid = $node->get('field_category')->target_id;
+      if ($node->bundle() == 'entry' && $tid != null) {
+        // Load term object from entry field_category
+        $term = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->load($tid);
+        // Load eligible transfer categories from that term
+        $term_ids = array_column($term->get('field_eligible_transfers')->getValue(), 'target_id');
+        // Hide the options of the suggested category field entry_screening--category taken from the webform that do not match
+        // the values from field_eligible_transfers taken from the node
+        foreach ($element['#options'] as $key => $value) {
+          if (!in_array($key, $term_ids)) {
+            unset($element['#options'][$key]);
+          }
+        }
+      }
+    }
+  }
+}
