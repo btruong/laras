@@ -12,7 +12,7 @@ id: entry_screening
 title: 'Entry Screening'
 description: ''
 category: ''
-elements: "status:\n  '#type': select\n  '#title': Status\n  '#options':\n    accept: Accept\n    'not eligible': 'Not Eligible'\n    'suggest category': 'Suggest a Different Category'\n  '#empty_option': 'Select a status'\n  '#required': true\ncategory:\n  '#type': webform_term_select\n  '#title': 'What category would you suggest?'\n  '#empty_option': 'Select a category'\n  '#required': true\n  '#required_error': 'You must select a suggested category for this entry'\n  '#states':\n    visible:\n      ':input[name=\"status\"]':\n        value: 'suggest category'\n  '#vocabulary': categories\n  '#breadcrumb': true\n  '#tree_delimiter': ''\nnot_eligible_reason:\n  '#type': webform_select_other\n  '#title': 'Why not eligible?'\n  '#options':\n    'Release Date not within eligibility period': 'Release Date not within eligibility period'\n    'Doesn’t meet 51% of new unreleased material': 'Doesn’t meet 51% of new unreleased material'\n    'Compilation/Sampler album': 'Compilation/Sampler album'\n    Remix: Remix\n    'Old material': 'Old material'\n    'Product in different language': 'Product in different language'\n    'Cover Song': 'Cover Song'\n    'Not New Artist': 'Not New Artist'\n  '#empty_option': 'Select a reason'\n  '#other__placeholder': 'Specify reason'\n  '#required': true\n  '#required_error': 'You must select a reason why this entry is not eligible'\n  '#states':\n    visible:\n      ':input[name=\"status\"]':\n        value: 'not eligible'\nnotes:\n  '#type': textarea\n  '#title': Notes"
+elements: "status:\n  '#type': select\n  '#title': Status\n  '#options':\n    accept: Accept\n    'not eligible': 'Not Eligible'\n    'suggest category': 'Suggest a Different Category'\n  '#empty_option': 'Select a status'\n  '#required': true\ncategory:\n  '#type': webform_term_select\n  '#title': 'What category would you suggest?'\n  '#empty_option': 'Select a category'\n  '#required': true\n  '#required_error': 'You must select a suggested category for this entry'\n  '#states':\n    visible:\n      ':input[name=\"status\"]':\n        value: 'suggest category'\n  '#vocabulary': categories\n  '#breadcrumb_delimiter': ''\n  '#tree_delimiter': ''\nnot_eligible_reason:\n  '#type': webform_select_other\n  '#title': 'Why not eligible?'\n  '#options':\n    'Release Date not within eligibility period': 'Release Date not within eligibility period'\n    'Doesn’t meet 51% of new unreleased material': 'Doesn’t meet 51% of new unreleased material'\n    'Compilation/Sampler album': 'Compilation/Sampler album'\n    Remix: Remix\n    'Old material': 'Old material'\n    'Product in different language': 'Product in different language'\n    'Cover Song': 'Cover Song'\n    'Not New Artist': 'Not New Artist'\n  '#empty_option': 'Select a reason'\n  '#other__placeholder': 'Specify reason'\n  '#required': true\n  '#required_error': 'You must select a reason why this entry is not eligible'\n  '#states':\n    visible:\n      ':input[name=\"status\"]':\n        value: 'not eligible'\nnotes:\n  '#type': textarea\n  '#title': Notes"
 css: ''
 javascript: ''
 settings:
@@ -54,6 +54,11 @@ settings:
   form_access_denied_message: ''
   form_access_denied_attributes: {  }
   form_file_limit: ''
+  share: false
+  share_node: false
+  share_theme_name: ''
+  share_title: true
+  share_page_body_attributes: {  }
   submission_label: ''
   submission_log: true
   submission_views: {  }
